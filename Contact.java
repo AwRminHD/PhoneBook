@@ -13,4 +13,15 @@ public class Contact {
         this.phone = phone;
         this.address = address;        
     }
+    
+    @Override 
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (!(obj instanceof Contact))
+            return false;
+        
+        Contact a = (Contact) obj;
+        return a.firstName.equals(firstName) && a.lastName.equals(lastName);
+    }   
 }
