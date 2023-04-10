@@ -1,9 +1,9 @@
 public class Contact {
-    String group, email;
-    String firstName, lastName;
+    private String group, email;
+    private String firstName, lastName;
     
-    PhoneNumber phone;
-    Address address;
+    private PhoneNumber phone;
+    private Address address;
 
     public Contact(String gp, String email, String Fname, String Lname, PhoneNumber phone, Address address) {
         this.group = gp;
@@ -23,5 +23,18 @@ public class Contact {
         
         Contact a = (Contact) obj;
         return a.firstName.equals(firstName) && a.lastName.equals(lastName);
-    }   
+    }
+    @Override
+    public String toString() {
+        return "first name: " + firstName + "\nlast name: " + lastName + "\nemail: " + email;
+    }
+    public String getGroup() {
+        return group;
+    }
+    public String getFirst() {
+        return firstName;
+    }
+    public String getLast() {
+        return lastName;
+    }
 }
