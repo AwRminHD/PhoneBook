@@ -42,6 +42,6 @@ public class PhoneBook {
     }
     void printContacts() {
         for (Contact con: contacts)
-            System.out.println(con);
+            System.out.println(con);    
     }
 }
