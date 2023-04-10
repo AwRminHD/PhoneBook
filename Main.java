@@ -28,11 +28,11 @@ public class Main {
                     System.out.println("Contact saved!");
                     Address ad = new Address(zipcode, country, city);
                     PhoneNumber Pnumber = new PhoneNumber(contrycode, number);
-                    Contact con = new Contact(city, email, firstname, lastname, Pnumber, ad)
+                    Contact con = new Contact(city, email, firstname, lastname, Pnumber, ad);
                     phonebook.addContact(con);
                 }
                 if (com[1].equals("-r")) {
-                    String firstname = com[2]
+                    String firstname = com[2];
                     String lastname = com[3];
                     
                     phonebook.deleteContact(firstname, lastname);
