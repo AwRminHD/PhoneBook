@@ -37,8 +37,11 @@ public class PhoneBook {
             if (check.getGroup().equals(group))
                 res.add(check);
         }
-
-        return (Contact[])res.toArray();
+        
+        Contact[] result = new Contact[res.size()];
+        for (int i = 0; i < res.size(); i++)
+            result[i] = res.get(i);
+        return result;
     }
     void printContacts() {
         for (Contact con: contacts)

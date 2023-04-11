@@ -28,7 +28,7 @@ public class Main {
                     System.out.println("Contact saved!");
                     Address ad = new Address(zipcode, country, city);
                     PhoneNumber Pnumber = new PhoneNumber(contrycode, number);
-                    Contact con = new Contact(city, email, firstname, lastname, Pnumber, ad);
+                    Contact con = new Contact(group, email, firstname, lastname, Pnumber, ad);
                     phonebook.addContact(con);
                 }
                 if (com[1].equals("-r")) {
@@ -39,7 +39,10 @@ public class Main {
                 }
             }
             else if (com[0].equals("show")) {
-                if (com[1].equals("-g")) {
+                if (com.length == 1) {
+                    phonebook.printContacts();
+                }
+                else if (com[1].equals("-g")) {
                     String gp = com[2];
                     Contact[] output = phonebook.findContacts(gp);
                     for (int i = 0; i < output.length; i++)
@@ -52,11 +55,8 @@ public class Main {
 
                     System.out.println(phonebook.findContact(firstname, lastname));
                 }
-                else {
-                    phonebook.printContacts();
-                }
             }
-            else if (com[0].equals("exit"))
+            else if (com[0].equals("exit")) 
                 break;   
         }
         inp.close();
